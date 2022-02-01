@@ -1,0 +1,16 @@
+[
+  "constructor(bool)",
+  "event AddedToWhitelist(address[] indexed)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "event RemovedFromWhitelist(address indexed)",
+  "function add(address[])",
+  "function getWhitelistedAddresses() view returns (address[])",
+  "function hasWhitelisting() view returns (bool)",
+  "function isWhitelisted(address) view returns (bool)",
+  "function owner() view returns (address)",
+  "function remove(address,uint256)",
+  "function renounceOwnership()",
+  "function transferOwnership(address)",
+  "function whitelist(address) view returns (bool)",
+  "function whitelistedAddresses(uint256) view returns (address)"
+]

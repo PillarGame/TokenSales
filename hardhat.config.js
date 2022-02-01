@@ -36,20 +36,6 @@ module.exports = {
           },
         },
       },
-      {
-        version: "0.5.8",
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 1000000,
-          },
-          outputSelection: {
-            "*": {
-              "*": ["storageLayout"],
-            },
-          },
-        },
-      },
     ],
   },
   abiExporter: {
