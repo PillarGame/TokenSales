@@ -2,9 +2,11 @@ require("@nomiclabs/hardhat-waffle");
 require('dotenv').config();
 require('hardhat-deploy');
 require('hardhat-abi-exporter');
+require("@nomiclabs/hardhat-etherscan");
+
 const fs = require("fs");
 
-const {OPTIMISTIC_KOVAN_PRIVATE_KEY, ALCHEMY_API_KEY} = process.env;
+const {OPTIMISTIC_KOVAN_PRIVATE_KEY, ALCHEMY_API_KEY, HECO_TEST_PRIVATE_KEY, ETHERSCAN_API_KEY} = process.env;
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -46,19 +48,19 @@ module.exports = {
             url: `https://opt-kovan.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
             accounts: [`${OPTIMISTIC_KOVAN_PRIVATE_KEY}`]
         },
-        hecochaintest: {
+        hecochain: {
             url: 'https://http-mainnet.hecochain.com',
-            accounts: [],
-            chainId: 256,
+            accounts: [`${HECO_TEST_PRIVATE_KEY}`],
+            chainId: 128,
             live: true,
             saveDeployments: true,
             tags: ["staging"],
             gasMultiplier: 2
         },
-        hecochain: {
+        hecochaintest: {
             url: 'https://http-testnet.hecochain.com',
-            accounts: [],
-            chainId: 128,
+            accounts: [`${HECO_TEST_PRIVATE_KEY}`],
+            chainId: 256,
             live: true,
             saveDeployments: true
         },
@@ -94,6 +96,9 @@ module.exports = {
             live: true,
             saveDeployments: true
         },
+    },
+    etherscan: {
+        apiKey: ETHERSCAN_API_KEY
     },
     abiExporter: {
     path: './abi',

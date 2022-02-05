@@ -10,6 +10,7 @@
     "@openzeppelin/contracts-ethereum-package": "3.0.0",
     "@openzeppelin/test-environment": "^0.1.9",
     "@openzeppelin/test-helpers": "^0.5.15",
+    "@nomiclabs/hardhat-etherscan": "^2.1.8",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "eth-sig-util": "^3.0.1",
